@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 17 Apr 2013 19:21:03 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<response>\n  <status>ok</status>\n
+        \ <results>\n    <result>\n      <nl_sixpp>2564AZ</nl_sixpp>\n      <street>Laan
+        van Meerdervoort</street>\n      <city>'s-Gravenhage</city>\n      <municipality>'s-Gravenhage</municipality>\n
+        \     <province>Zuid-Holland</province>\n      <streetnumbers>1096-1126</streetnumbers>\n
+        \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
+        \   </result>\n  </results>\n</response>\n"
+    http_version: 
+  recorded_at: Wed, 17 Apr 2013 19:21:03 GMT
+- request:
+    method: get
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 17 Apr 2013 19:21:04 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<response>\n  <status>ok</status>\n
+        \ <results>\n    <result>\n      <nl_sixpp>2564AZ</nl_sixpp>\n      <street>Laan
+        van Meerdervoort</street>\n      <city>'s-Gravenhage</city>\n      <municipality>'s-Gravenhage</municipality>\n
+        \     <province>Zuid-Holland</province>\n      <streetnumbers>1096-1126</streetnumbers>\n
+        \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
+        \   </result>\n  </results>\n</response>\n"
+    http_version: 
+  recorded_at: Wed, 17 Apr 2013 19:21:04 GMT
+recorded_with: VCR 2.4.0
