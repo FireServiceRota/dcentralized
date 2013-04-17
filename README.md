@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Setup
 
-Add file <tt>config/initializers/dcentralized.rb</tt>.
+Add file `config/initializers/dcentralized.rb`.
 
     require 'airbrake'
     Dcentralized.configure do |config|
