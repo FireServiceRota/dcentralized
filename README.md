@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Add file `config/initializers/dcentralized.rb`.
 
-    require 'airbrake'
+    require 'dcentralized'
     Dcentralized.configure do |config|
       config.api_key = "123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ"
     end
