@@ -1,6 +1,6 @@
-require "xmlsimple"
-require "json"
 require "rest-client"
+require "xmlsimple"
+require "hash_symbolizer"
 require "dcentralized/version"
 
 module Dcentralized
@@ -18,7 +18,7 @@ module Dcentralized
     params.merge!(format: 'xml', pretty: 'True')
     # Perform request and return output
     response = RestClient.get "#{@api_url}/autocomplete", {params: params}
-    XmlSimple.xml_in(response)["results"][0]["result"][0].to_json
+    stringify(XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true))
   end
 
   def self.format_zipcode(zipcode = nil)
@@ -28,6 +28,14 @@ module Dcentralized
       raise Exception.new("Wrong zipcode format (1234AB format expected)")
     else
       zipcode.gsub(" ", "").upcase
+    end
+  end
+
+  def self.stringify(obj)
+    if obj.is_a? Array
+      obj.join
+    elsif obj.is_a? Hash
+      obj.merge( obj ) {|k, val| stringify val }
     end
   end
 

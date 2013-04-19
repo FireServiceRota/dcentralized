@@ -31,15 +31,15 @@ Add file `config/initializers/dcentralized.rb`.
 
     Dcentralized.auto_complete("2564AZ")
     # => {
-      "nl_sixpp":["2564AZ"],
-      "street":["Laan van Meerdervoort"],
-      "city":["'s-Gravenhage"],
-      "municipality":["'s-Gravenhage"],
-      "province":["Zuid-Holland"],
-      "streetnumbers":["1096-1126"],
-      "lat":["52.06751"],
-      "lng":["4.24733"],
-      "areacode":["070"]
+      :nl_sixpp => "2564AZ",
+      :street => "Laan van Meerdervoort",
+      :city => "'s-Gravenhage",
+      :municipality => "'s-Gravenhage",
+      :province => "Zuid-Holland",
+      :streetnumbers => "1096-1126",
+      :lat => "52.06751",
+      :lng => "4.24733",
+      :areacode => "070"
     }
 
 ## Contributing
