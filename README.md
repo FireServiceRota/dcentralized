@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nicka/dcentralized.png?branch=develop)](https://travis-ci.org/nicka/dcentralized)
+
 # Dcentralized
 
 API wrapper for Pro6PP zipcode database(d-centralize.nl). 
