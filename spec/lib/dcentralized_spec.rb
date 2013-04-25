@@ -32,8 +32,8 @@ describe Dcentralized do
         :lng => "4.24733",
         :areacode => "070"
       }
-      Dcentralized.auto_complete("2564AZ").should eq xml_response_mock
-      Dcentralized.auto_complete("2564AZ").should include(:street)
+      Dcentralized.auto_complete("2564AZ").should eq OpenStruct.new(xml_response_mock)
+      Dcentralized.auto_complete("2564AZ").street.should eq "Laan van Meerdervoort"
     end
   end
 
@@ -48,8 +48,8 @@ describe Dcentralized do
         :lat => "52.068",
         :lng => "4.25724"
       }
-      Dcentralized.auto_complete("2564").should eq xml_response_mock
-      Dcentralized.auto_complete("2564").should_not include(:street)
+      Dcentralized.auto_complete("2564").should eq OpenStruct.new(xml_response_mock)
+      Dcentralized.auto_complete("2564").street.should eq nil
     end
   end
 

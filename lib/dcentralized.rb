@@ -1,11 +1,12 @@
 require "rest-client"
 require "xmlsimple"
 require "hash_symbolizer"
+require "ostruct"
 require "dcentralized/version"
 
 module Dcentralized
   class << self
-    attr_accessor :api_url, :auth_key
+    attr_accessor :api_url, :api_key
     def configure(&blk); class_eval(&blk); end
   end
 
@@ -13,12 +14,14 @@ module Dcentralized
     # Format the zipcode
     zipcode = format_zipcode(zipcode)
     # Setup request
-    params   = {auth_key: @auth_key} 
+    params  = {auth_key: @api_key} 
     zipcode.length == 6 ? params.merge!(nl_sixpp: zipcode) : params.merge!(nl_fourpp: zipcode)
     params.merge!(format: 'xml', pretty: 'True')
-    # Perform request and return output
+    # Perform request
     response = RestClient.get "#{@api_url}/autocomplete", {params: params}
-    stringify(XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true))
+    hash     = XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true)
+    # Return openstruct output
+    OpenStruct.new stringify(hash)
   end
 
   def self.format_zipcode(zipcode = nil)
@@ -47,5 +50,5 @@ end
 # Set default configuration
 Dcentralized.configure do
   @api_url  = "http://api.pro6pp.nl/v1"
-  @auth_key = "123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ"
+  @api_key = "123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ"
 end

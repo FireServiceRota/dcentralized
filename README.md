@@ -25,22 +25,24 @@ Add file `config/initializers/dcentralized.rb`.
       config.api_key = "123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ"
     end
 
-## Usage
+## Example usage
 
-**Example**
+High detailed zipcode result:
 
-    Dcentralized.auto_complete("2564AZ")
-    # => {
-      :nl_sixpp => "2564AZ",
-      :street => "Laan van Meerdervoort",
-      :city => "'s-Gravenhage",
-      :municipality => "'s-Gravenhage",
-      :province => "Zuid-Holland",
-      :streetnumbers => "1096-1126",
-      :lat => "52.06751",
-      :lng => "4.24733",
-      :areacode => "070"
-    }
+    response = Dcentralized.auto_complete("2564AZ")
+    # => #<OpenStruct nl_sixpp="2564AZ", street="Laan van Meerdervoort", city="'s-Gravenhage", municipality="'s-Gravenhage", province="Zuid-Holland", streetnumbers="1096-1126", lat="52.06751", lng="4.24733", areacode="070">
+
+Low detailed zipcode result:
+
+    response = Dcentralized.auto_complete("2564")
+    # => #<OpenStruct nl_fourpp="2564", city="'s-Gravenhage", municipality="'s-Gravenhage", province="Zuid-Holland", areacode="070", lat="52.068", lng="4.25724">
+
+You can then use:
+
+    response.street
+    # => "Laan van Meerdervoort"
+    response.province
+    # => "Zuid-Holland"
 
 ## Contributing
 
