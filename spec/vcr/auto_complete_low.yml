@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=tflVGfhmU1IGzlsw&format=xml&nl_fourpp=2564&pretty=True
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_fourpp=2564&pretty=True
     body:
       encoding: US-ASCII
       string: ''
@@ -43,7 +43,7 @@ http_interactions:
   recorded_at: Fri, 13 Sep 2013 15:02:49 GMT
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=tflVGfhmU1IGzlsw&format=xml&nl_fourpp=2564&pretty=True
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_fourpp=2564&pretty=True
     body:
       encoding: US-ASCII
       string: ''
