@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=tflVGfhmU1IGzlsw&format=xml&nl_sixpp=2564AZ&pretty=True
     body:
       encoding: US-ASCII
       string: ''
@@ -25,9 +25,11 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 17 Apr 2013 19:21:03 GMT
+      - Fri, 13 Sep 2013 15:02:48 GMT
       Server:
       - Google Frontend
+      Alternate-Protocol:
+      - 80:quic,80:quic
       Transfer-Encoding:
       - chunked
     body:
@@ -39,10 +41,10 @@ http_interactions:
         \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
         \   </result>\n  </results>\n</response>\n"
     http_version: 
-  recorded_at: Wed, 17 Apr 2013 19:21:03 GMT
+  recorded_at: Fri, 13 Sep 2013 15:02:48 GMT
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=tflVGfhmU1IGzlsw&format=xml&nl_sixpp=2564AZ&pretty=True
     body:
       encoding: US-ASCII
       string: ''
@@ -65,9 +67,11 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 17 Apr 2013 19:21:04 GMT
+      - Fri, 13 Sep 2013 15:02:48 GMT
       Server:
       - Google Frontend
+      Alternate-Protocol:
+      - 80:quic,80:quic
       Transfer-Encoding:
       - chunked
     body:
@@ -79,5 +83,5 @@ http_interactions:
         \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
         \   </result>\n  </results>\n</response>\n"
     http_version: 
-  recorded_at: Wed, 17 Apr 2013 19:21:04 GMT
+  recorded_at: Fri, 13 Sep 2013 15:02:49 GMT
 recorded_with: VCR 2.4.0

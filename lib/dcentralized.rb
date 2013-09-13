@@ -27,7 +27,7 @@ module Dcentralized
   def self.format_zipcode(zipcode = nil)
     if zipcode.nil? || zipcode == ""
       raise Exception.new("No zipcode provided")
-    elsif (zipcode =~ /^[1-9]{4}$|[1-9]{4}[\ ]{1}[a-zA-Z]{2}$|[1-9]{4}[a-zA-Z]{2}$/).nil?
+    elsif (zipcode =~ /^[0-9]{4}$|[0-9]{4}[\ ]{1}[a-zA-Z]{2}$|[0-9]{4}[a-zA-Z]{2}$/).nil?
       raise Exception.new("Wrong zipcode format (1234AB format expected)")
     else
       zipcode.gsub(" ", "").upcase
