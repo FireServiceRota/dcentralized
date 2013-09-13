@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nicka/dcentralized.png?branch=develop)](https://travis-ci.org/nicka/dcentralized)
+[![Build Status](https://travis-ci.org/nicka/dcentralized.png?branch=develop)](https://travis-ci.org/nicka/dcentralized) [![Code Climate](https://codeclimate.com/github/nicka/dcentralized.png)](https://codeclimate.com/github/nicka/dcentralized)
 
 # Dcentralized
 
