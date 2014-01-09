@@ -18,8 +18,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_runtime_dependency "rest-client", "~> 1.6.7"
-  # gem.add_runtime_dependency "xml-simple", "~> 1.1.2" # Removed dependency because of conflict
-  gem.add_runtime_dependency "hash_symbolizer", "~> 1.0.1"
+  #gem.add_runtime_dependency "xml-simple", "~> 1.1.2" # Removed dependency because of conflict
+  #gem.add_runtime_dependency "hash_symbolizer", "~> 1.0.1"
   
   gem.add_development_dependency "rspec", "~> 2.13.0"
   gem.add_development_dependency "capybara", "~> 2.1.0"
