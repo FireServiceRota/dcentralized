@@ -1,6 +1,7 @@
 require "rest-client"
 require "ostruct"
 require "dcentralized/version"
+require 'dcentralized/invalid_postcode_exception'
 
 module Dcentralized
   class << self
