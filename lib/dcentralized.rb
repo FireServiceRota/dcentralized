@@ -1,5 +1,5 @@
 require "rest-client"
-require "xmlsimple"
+#require "xmlsimple"
 require "hash_symbolizer"
 require "ostruct"
 require "dcentralized/version"
