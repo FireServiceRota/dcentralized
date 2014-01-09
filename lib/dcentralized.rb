@@ -18,13 +18,15 @@ module Dcentralized
     params.merge!(streetnumber: house_number) if house_number
 
     # Perform request
-    response = RestClient.get "#{@api_url}/autocomplete", {params: params}
+    response = JSON.parse(RestClient.get "#{@api_url}/autocomplete", {params: params})
 
-    #hash     = XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true)
-    hash = JSON.parse(response)["results"].first
-
-    # Return openstruct output
-    OpenStruct.new hash
+    if response["status"] == "ok"
+      return OpenStruct.new response["results"].first
+    elsif response["status"] == "error"
+      raise Exception.new(response["error"]["message"])
+    else
+      raise Exception.new("Unknown exception in Pro6PP auto_complete response")
+    end
   end
 
   def self.format_zipcode(zipcode = nil)
