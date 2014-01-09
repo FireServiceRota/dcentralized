@@ -8,13 +8,15 @@ module Dcentralized
     def configure(&blk); class_eval(&blk); end
   end
 
-  def self.auto_complete(zipcode)
+  def self.auto_complete(zipcode, house_number = nil)
     # Format the zipcode
     zipcode = format_zipcode(zipcode)
     # Setup request
     params  = {auth_key: @api_key} 
     zipcode.length == 6 ? params.merge!(nl_sixpp: zipcode) : params.merge!(nl_fourpp: zipcode)
     params.merge!(format: 'json')
+    params.merge!(streetnumber: house_number) if house_number
+
     # Perform request
     response = RestClient.get "#{@api_url}/autocomplete", {params: params}
 
