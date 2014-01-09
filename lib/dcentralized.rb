@@ -1,6 +1,4 @@
 require "rest-client"
-#require "xmlsimple"
-#require "hash_symbolizer"
 require "ostruct"
 require "dcentralized/version"
 
@@ -16,12 +14,15 @@ module Dcentralized
     # Setup request
     params  = {auth_key: @api_key} 
     zipcode.length == 6 ? params.merge!(nl_sixpp: zipcode) : params.merge!(nl_fourpp: zipcode)
-    params.merge!(format: 'xml', pretty: 'True')
+    params.merge!(format: 'json')
     # Perform request
     response = RestClient.get "#{@api_url}/autocomplete", {params: params}
-    hash     = XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true)
+
+    #hash     = XmlSimple.xml_in(response)["results"][0]["result"][0].symbolize_keys(true)
+    hash = JSON.parse(response)["results"].first
+
     # Return openstruct output
-    OpenStruct.new stringify(hash)
+    OpenStruct.new hash
   end
 
   def self.format_zipcode(zipcode = nil)
