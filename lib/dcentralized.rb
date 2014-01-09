@@ -23,7 +23,7 @@ module Dcentralized
     if response["status"] == "ok"
       return OpenStruct.new response["results"].first
     elsif response["status"] == "error"
-      raise Exception.new(response["error"]["message"])
+      raise InvalidPostcodeException, response["error"]["message"]
     else
       raise Exception.new("Unknown exception in Pro6PP auto_complete response")
     end
