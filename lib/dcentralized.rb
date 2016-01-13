@@ -13,7 +13,7 @@ module Dcentralized
     # Format the zipcode
     zipcode = format_zipcode(zipcode)
     # Setup request
-    params  = {auth_key: @api_key} 
+    params  = {auth_key: @api_key}
     zipcode.length == 6 ? params.merge!(nl_sixpp: zipcode) : params.merge!(nl_fourpp: zipcode)
     params.merge!(format: 'json')
     params.merge!(streetnumber: house_number) if house_number
@@ -32,9 +32,9 @@ module Dcentralized
 
   def self.format_zipcode(zipcode = nil)
     if zipcode.nil? || zipcode == ""
-      raise Exception.new("No zipcode provided")
+      raise InvalidPostcodeException.new("No zipcode provided")
     elsif (zipcode =~ /^[0-9]{4}$|[0-9]{4}[\ ]{1}[a-zA-Z]{2}$|[0-9]{4}[a-zA-Z]{2}$/).nil?
-      raise Exception.new("Wrong zipcode format (1234AB format expected)")
+      raise InvalidPostcodeException.new("Wrong zipcode format (1234AB format expected)")
     else
       zipcode.gsub(" ", "").upcase
     end
