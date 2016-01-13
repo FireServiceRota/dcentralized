@@ -2,13 +2,13 @@
 
 # Dcentralized
 
-API wrapper for Pro6PP zipcode database(d-centralize.nl). 
+API wrapper for Pro6PP zipcode database(d-centralize.nl).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'dcentralized'
+    gem 'dcentralized-api'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install dcentralized
+    $ gem install dcentralized-api
 
 ## Setup
 
