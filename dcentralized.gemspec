@@ -17,10 +17,10 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_runtime_dependency "rest-client", "~> 1.6"
-  gem.add_development_dependency "rspec", "~> 2.13"
-  gem.add_development_dependency "capybara", "~> 2.1"
-  gem.add_development_dependency "vcr", "~> 2.4"
-  gem.add_development_dependency "webmock", "~> 1.8"
-  gem.add_development_dependency "simplecov", "~> 0.7"
+  gem.add_runtime_dependency "rest-client", ">= 1.6"
+  gem.add_development_dependency "rspec", ">=2.13"
+  gem.add_development_dependency "capybara", ">=2.1"
+  gem.add_development_dependency "vcr", ">=2.4"
+  gem.add_development_dependency "webmock", ">=1.8"
+  gem.add_development_dependency "simplecov", ">= 0.7"
 end
