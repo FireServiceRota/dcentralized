@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'vcr'
 require 'webmock'
@@ -6,8 +8,7 @@ SimpleCov.start
 require 'dcentralized'
 
 RSpec.configure do |config|
-  config.color_enabled = true
-  config.formatter     = 'documentation'
+  config.formatter = 'documentation'
 end
 
 VCR.configure do |config|

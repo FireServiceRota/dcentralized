@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    uri: https://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=json&nl_sixpp=2564AZ
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -18,41 +18,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - no-cache
       Content-Type:
-      - application/xml; charset=utf-8
+      - application/json; charset=utf-8
       Vary:
       - Accept-Encoding
+      Cache-Control:
+      - max-age=300, public
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      X-Cloud-Trace-Context:
+      - 942e6792a1d65bbe75c8032b3a20f250
       Date:
-      - Fri, 13 Sep 2013 15:02:48 GMT
+      - Mon, 26 Aug 2019 23:41:17 GMT
       Server:
       - Google Frontend
-      Alternate-Protocol:
-      - 80:quic,80:quic
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '206'
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<response>\n  <status>ok</status>\n
-        \ <results>\n    <result>\n      <nl_sixpp>2564AZ</nl_sixpp>\n      <street>Laan
-        van Meerdervoort</street>\n      <city>'s-Gravenhage</city>\n      <municipality>'s-Gravenhage</municipality>\n
-        \     <province>Zuid-Holland</province>\n      <streetnumbers>1096-1126</streetnumbers>\n
-        \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
-        \   </result>\n  </results>\n</response>\n"
-    http_version: 
-  recorded_at: Fri, 13 Sep 2013 15:02:48 GMT
+      encoding: ASCII-8BIT
+      string: '{"status":"ok","results":[{"nl_sixpp":"2564AZ","street":"Laan van Meerdervoort","city":"''s-Gravenhage","municipality":"''s-Gravenhage","province":"Zuid-Holland","streetnumbers":"1096-1126","lat":52.067554,"lng":4.247434,"areacode":"070"}]}'
+    http_version:
+  recorded_at: Mon, 26 Aug 2019 23:41:17 GMT
 - request:
     method: get
-    uri: http://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=xml&nl_sixpp=2564AZ&pretty=True
+    uri: https://api.pro6pp.nl/v1/autocomplete?auth_key=123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ&format=json&nl_sixpp=2564AZ
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - ! '*/*; q=0.5, application/xml'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -60,28 +61,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - no-cache
       Content-Type:
-      - application/xml; charset=utf-8
+      - application/json; charset=utf-8
       Vary:
       - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      X-Cloud-Trace-Context:
+      - 942e6792a1d65bbe75c8032b3a20f250
       Date:
-      - Fri, 13 Sep 2013 15:02:48 GMT
+      - Mon, 26 Aug 2019 23:41:17 GMT
       Server:
       - Google Frontend
-      Alternate-Protocol:
-      - 80:quic,80:quic
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '206'
+      Cache-Control:
+      - max-age=300, public
+      Age:
+      - '0'
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<response>\n  <status>ok</status>\n
-        \ <results>\n    <result>\n      <nl_sixpp>2564AZ</nl_sixpp>\n      <street>Laan
-        van Meerdervoort</street>\n      <city>'s-Gravenhage</city>\n      <municipality>'s-Gravenhage</municipality>\n
-        \     <province>Zuid-Holland</province>\n      <streetnumbers>1096-1126</streetnumbers>\n
-        \     <lat>52.06751</lat>\n      <lng>4.24733</lng>\n      <areacode>070</areacode>\n
-        \   </result>\n  </results>\n</response>\n"
-    http_version: 
-  recorded_at: Fri, 13 Sep 2013 15:02:49 GMT
-recorded_with: VCR 2.4.0
+      encoding: ASCII-8BIT
+      string: '{"status":"ok","results":[{"nl_sixpp":"2564AZ","street":"Laan van Meerdervoort","city":"''s-Gravenhage","municipality":"''s-Gravenhage","province":"Zuid-Holland","streetnumbers":"1096-1126","lat":52.067554,"lng":4.247434,"areacode":"070"}]}'
+    http_version:
+  recorded_at: Mon, 26 Aug 2019 23:41:17 GMT
+recorded_with: VCR 5.0.0
